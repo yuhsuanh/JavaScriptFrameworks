@@ -1,0 +1,15 @@
+{
+  "name": "lesson2demo",
+  "version": "1.0.0",
+  "description": "test lesson 2",
+  "main": "tax.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "YuHsuan Huang",
+  "license": "ISC",
+  "dependencies": {
+    "accounting": "^0.4.1",
+    "nodemon": "^2.0.7"
+  }
+}
