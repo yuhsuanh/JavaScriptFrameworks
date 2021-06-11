@@ -1,0 +1,5 @@
+npm init
+npm i express
+npm i -g express-generator
+npx express-generator --view=hbs
+npm install
