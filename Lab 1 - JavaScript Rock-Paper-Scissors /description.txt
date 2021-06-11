@@ -1,0 +1,21 @@
+This lab is a JavaScript refresher. To complete the lab:
+
+
+
+Watch the following video tutorial about Programming Basics - How to start programming? (While making a Rock-Paper-Scissors Game)
+Use jsbin.com to write and test your script if you like.
+Use the prompt() function to ask the user to choose ROCK, PAPER, or SCISSORS and store their response as userSelection
+Use the Math.random() function to generate a number as computerSelection: 0 - .34 => PAPER, .35 - .67 => SCISSORS, .68 - 1 => ROCK
+Display both the userSelection and computerSelection variables using console.log() - Use decision structures to determine who wins the game using regular Rock, Paper, Scissors rules (ask if you are unclear)
+Display the winner of the game ("User Wins", "Computer Wins", or "It's a tie")
+When your game is working, copy your completed code into a file called lab1.js
+Create a new private GitHub repo called COMP2068, invite me - eduardojaime - as a collaborator and push your lab1.js file to this repo - Submit your COMP2068 repo link
+Repository link: https://github.com/yuhsuanhuang-tw/COMP2068
+
+Assignment Details
+Click to maximize/restore view
+Click to collapse/expand grading panel
+Lab 1 - JavaScript Rock-Paper-Scissors
+
+June 3, 2021 5:00 PM
+
