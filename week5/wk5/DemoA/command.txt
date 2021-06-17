@@ -1,0 +1,3 @@
+npx express-generator --view=hbs
+npm i
+npm i mongoose
