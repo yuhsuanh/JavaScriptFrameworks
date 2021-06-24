@@ -1,0 +1,23 @@
+<section class="common-section">
+	<div class="container">
+		<h1 class="text-center">My Projects</h1>
+        <hr class="common-section-hr" />
+
+        {{#each projects}}
+        <article class="d-flex flex-nowrap rounded project">
+            <div class="order-{{imageOrder}}" style="align-self: center;">
+                <img class="project-img" src="{{image}}" />
+            </div>
+            <div class="order-{{textOrder}} project-text">
+                <h2><a href="{{link}}" style="text-decoration:unset!important;">{{title}}</a></h2>
+                <p>{{description}}</p>
+                <div class="row">
+                {{#each tags}}
+                    <li class="tags"><i class="fas fa-tag mr-2"></i>{{tag}}</li>
+                {{/each}}
+                </div>
+            </div>
+		</article>
+        {{/each}}
+	</div>
+</div>

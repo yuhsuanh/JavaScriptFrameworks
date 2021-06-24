@@ -1,0 +1,76 @@
+<section class="common-section">
+	<div class="container">
+		<h1 class="text-center">{{title}}</h1>
+        <hr class="common-section-hr" />
+
+        <div class="about-me-background rounded-top">
+            <div class="row about-me-padding-top">
+                <div class="col col-sm-12 col-md-4">
+                    <img class="rounded-circle about-me-img" src="/images/profile.jpeg">
+                </div>
+                <div class="col col-sm-12 col-md-8" style="align-self: center;">
+                    <h1>My name is {{profile.name}}</h1>
+                    <p>{{profile.introduction}}</p>
+                </div>
+            </div>
+            <div class="row about-me-padding-bottom">
+                <div class="col col-md-4">
+                    <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+                    <p>{{profile.address}}</p>
+                </div>
+                <div class="col col-md-4">
+                    <h3><i class="fas fa-phone-alt"></i> Phone: </h3>
+                    <p>{{profile.phone}}</p>
+                </div>
+                <div class="col col-md-4">
+                    <h3><i class="fas fa-envelope"></i> Email: </h3>
+                    <p>{{profile.email}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-me-background about-me-padding-bottom">
+            <h2 class="text-center pb-4">Work Experience</h2>
+            {{#each works}}
+            <div class="row">
+                <div class="col col-sm-12 col-md-4">
+                    <h4>{{company}}</h4>
+                    <p>{{duration}}</p>
+                </div>
+                <div class="col col-sm-12 col-md-8">
+                    <h4>{{position}}</h4>
+                    <ul>
+                        {{#each description}}
+                        <li>{{text}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <div class="about-me-background about-me-padding-bottom rounded-bottom">
+            <h2 class="text-center pb-4">Education</h2>
+            {{#each educations}}
+            <div class="row">
+                <div class="col col-sm-12 col-md-4">
+                    <h4>{{school}}</h4>
+                    <p>{{duration}}</p>
+                    <p>
+                        <i class="fas fa-globe-americas"></i>
+                        {{location}}
+                    </p>
+                </div>
+                <div class="col col-sm-12 col-md-8">
+                    <h4>{{major}} - {{degree}}</h4>
+                    {{#each description}}
+                    <ul>
+                        <li>{{text}}</li>
+                    </ul>
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>

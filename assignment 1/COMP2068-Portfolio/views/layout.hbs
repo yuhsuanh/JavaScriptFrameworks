@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+
+
+    {{!-- customer style --}}
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    {{!-- bootstrap css style --}}
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+    {{!-- font-awesome css style --}}
+    <link rel="stylesheet" href="/stylesheets/fontawesome.min.css" />
+    <link rel="stylesheet" href="/stylesheets/brands.min.css" />
+    <link rel="stylesheet" href="/stylesheets/solid.min.css" />
+
+  </head>
+  <body>
+    <header>
+      {{!-- sticky-top, fixed-top --}}
+      <nav class="navbar navbar-expand-lg">
+          <div class="container">
+              <a class="navbar-brand" href="/">YuHsuan Huang (Sean)</a>
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseNavBar" aria-controls="collapseNavBar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="collapseNavBar">
+                  <ul class="navbar-nav ml-auto">
+                      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/about">About Me</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li>
+                      <li class="nav-item"><a class="nav-link" href="contacts">Contacts</a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+    </header>
+
+    <main>
+      {{{body}}}
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-8 mx-auto">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item">
+                      <a href="https://www.instagram.com/yuhsuan.huang.tw/" target="_blank">
+                        <span class="fa-stack" style="vertical-align: top;">
+                          <i class="fas fa-circle fa-stack-2x"></i>
+                          <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="https://www.linkedin.com/in/yu-hsuan-hsuan-tw/" target="_blank">
+                        <span class="fa-stack" style="vertical-align: top;">
+                          <i class="fas fa-circle fa-stack-2x"></i>
+                          <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="https://github.com/yuhsuanhuang-tw" target="_blank">
+                        <span class="fa-stack" style="vertical-align: top;">
+                          <i class="fas fa-circle fa-stack-2x"></i>
+                          <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="https://yuhsuan-huang.blogspot.com/" target="_blank">
+                        <span class="fa-stack" style="vertical-align: top;">
+                          <i class="fas fa-circle fa-stack-2x"></i>
+                          <i class="fab fa-blogger-b fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted text-center">Copyright © Yu-Hsuan Huang 2021 | Web Design by Yu-Hsuan</p>
+            </div>
+        </div>
+      </div>
+    </footer>
+
+    {{!-- add bootstrap javascirpt --}}
+    <script src="/javascripts/jquery-3.6.0.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+  </body>
+</html>

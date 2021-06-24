@@ -1,0 +1,225 @@
+/* fonts */
+@font-face {
+  font-family: "Audiowide";
+  src: url("/fonts/Audiowide-Regular.ttf");
+}
+@font-face {
+  font-family: "Rokkitt";
+  src: url("/fonts/Rokkitt-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Sacramento";
+  src: url("/fonts/Sacramento-Regular.ttf");
+}
+
+body {
+  font-family: "Audiowide", "Rokkitt", Monospace, Arial, Helvetica !important;
+
+}
+
+
+
+/* header styles */
+header {
+  background-color: rgb(33, 47, 62);
+}
+header .navbar-brand {
+  color: #fff;
+}
+header .collapse .nav-item a {
+  color: #b0c4de;
+}
+
+
+/* footer styles */
+footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: rgb(33, 47, 62);
+  color: #fff;
+}
+footer .fa-circle.fa-stack-2x {
+  color: cornflowerblue;
+}
+
+
+/* Home - Home cover section */
+.home-cover {
+  background-image: url("/images/abdul-a-0si69BeGjoI-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 600px;
+  color: white;
+
+  /* make inside items vertical center */
+  display: flex;
+  align-items: center;
+}
+.home-cover > div {
+  padding-left: 60px;
+  line-height: 2.5
+}
+.home-cover h1 {
+  font-size: 4rem;
+  background-color: brown;
+}
+.home-cover a {
+  float: right;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+
+/* Home - my technique section */
+.technique {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  display: block;
+  position: relative;
+}
+.technique figcaption {
+  color: white;
+
+  display: block;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+.technique figcaption:before {
+  /* set up text background color area */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  background: #700877;
+  background: -webkit-linear-gradient(90deg, #700877 0%, #ff2759 100%, #ff2759 100%);
+  background: linear-gradient(90deg, #700877 0%, #ff2759 100%, #ff2759 100%);
+  opacity: 0.8;
+  z-index: -1;
+
+  border-radius: 0 0 4px 4px;
+}
+.technique-row, .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+figure > .image > img {
+  width: 100%;
+}
+figcaption > h3 {
+  text-align: center;
+}
+figcaption > p {
+  padding-right: 20px;
+  padding-left: 20px;
+  text-indent: 20px;
+}
+
+
+/* Common Section, Horizontal rule */
+.common-section {
+  background-color: whitesmoke;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.common-section-hr {
+  border-color: rgb(63, 152, 214);
+  border-width: 2px;
+  width: 160px;
+}
+
+
+/* About - about me background, image size, padding... */
+.about-me-background {
+  background-color: rgb(220 220 220);
+}
+.about-me-img {
+  width: 100%;
+}
+.about-me-padding-top {
+  padding-top: 80px;
+  padding-bottom: 30px;
+}
+.about-me-padding-bottom {
+  padding-bottom: 80px;
+}
+
+
+/* Projects - card */
+.project {
+  flex-wrap: wrap;
+  display: flex;
+  
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  border-radius: 10px;
+  margin: 0 0 2rem 0;
+  overflow: hidden;
+  position: relative;
+}
+.project-img {
+  width: 300px;
+}
+.tags {
+  font-size: 0.8rem;
+  display: inline-block;
+  background: rgba(83, 83, 83, 0.4);
+  border-radius: 3px;
+  padding: 2.5px 10px;
+  margin: 0 5px 5px 0;
+  cursor: default;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+.tags a {
+  color:  unset !important;
+  text-decoration: unset !important;
+}
+.project-text {
+  padding: 3.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.project-text::before{
+  background-color: whitesmoke;
+  content: "";
+  position: absolute;
+  display: block;
+  top: -20%;
+  height: 130%;
+  width: 55px;
+  left: -12px !important;
+  transform: rotate(4deg);
+}
+.project-text::after{
+  background-color: whitesmoke;
+  content: "";
+  position: absolute;
+  display: block;
+  top: -20%;
+  height: 130%;
+  width: 55px;
+  right: -12px !important;
+  transform: rotate(-4deg);
+}
+
+
+/* Contacts - Contact Form */
+.contact-form-padding-top {
+  padding-top: 80px;
+}
+.contact-item-right {
+  padding-right: 20px;
+}
+.contact-item-subject {
+  padding-top: 50px;
+}
+.contact-item-textarea {
+  height: 95px !important;
+  resize: none;
+}
