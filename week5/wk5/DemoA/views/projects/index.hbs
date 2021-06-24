@@ -1,15 +1,16 @@
 <h1>{{title}}</h1>
 
 {{!-- add link for navigation --}}
-<a href="/projects/add">Add a new project</a>
+<a class="btn btn-primary" href="/projects/add">Add a new project</a>
 
 {{!-- build a table --}}
-<table>
+<table class="table table-hover table-dark my-3">
     <thead>
         <th>Name</th>
         <th>Due Date</th>
         <th>Course</th>
         <th>Status</th>
+        <th></th>
     </thead>
     <tbody>
         {{#each dataset}}
@@ -18,6 +19,11 @@
                 <td>{{this.dueDate}}</td>
                 <td>{{this.course}}</td>
                 <td>{{this.status}}</td>
+                <td>
+                    {{!-- use a handlebars templete --}}
+                    <a href="/projects/edit/{{this._id}}" class="btn btn-primary">Edit</a>
+                    <a href="/projects/delete/{{this._id}}" class="btn btn-danger" onclick="return confirmDeletion()">Delete</a>
+                </td>
             </tr>
         {{/each}}
     </tbody>

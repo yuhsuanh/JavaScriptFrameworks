@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+
+{{!-- TODO Add fields to filled in and a button --}}
+<form method="POST">
+    {{!-- Fields --}}
+    <fieldset>
+        <label for="name" class="col-2">Name:</label>
+        <input name="name" id="name" required>
+    </fieldset>
+    <fieldset>
+        <label for="instructor" class="col-2">Instructor:</label>
+        <input name="instructor" id="instructor" required>
+    </fieldset>
+
+    {{!-- Button --}}
+    <button class="offset-3 btn btn-primary">Save</button>
+</form>

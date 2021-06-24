@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+
+{{!-- add link for navigation --}}
+<a class="btn btn-primary" href="/courses/add">Add a new Course</a>
+
+{{!-- build a table --}}
+<table class="table table-hover table-dark my-3">
+    <thead>
+        <th>Name</th>
+        <th>Instructor</th>
+        <th>Status</th>
+    </thead>
+    <tbody>
+        {{#each dataset}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.instructor}}</td>
+                <td>{{this.status}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
