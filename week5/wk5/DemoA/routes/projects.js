@@ -74,6 +74,11 @@ hbs.registerHelper('createOption', (currentValue, selectedValue) => {
         selectedAttribute = 'selected';
     }
     return new hbs.SafeString(`<option ${selectedAttribute}>${currentValue}</option>`);
+    // return new hbs.SafeString('<option ' + selectedAttribute + '>'+ currentValue + '</option>');
+})
+
+hbs.registerHelper('toShortDate', (longDateValue) => {
+    return new hbs.SafeString(longDateValue.toLocaleDateString("en-CA"));
 })
 
 

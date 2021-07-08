@@ -13,6 +13,9 @@ var indexRouter = require('./routes/index');
 var projectsRouter = require('./routes/projects');
 var coursesRouter = require('./routes/courses');
 
+const passport = require('passport');
+const session = require('express-session');
+
 var app = express();
 
 // view engine setup
@@ -24,6 +27,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Configure passport session cookie
+app.use(session({
+  secret: 's20201projectTracker',
+  resave: false,
+  saveUninitialized: false
+}));
+
+//Initialize passport
+app.use(passport.initialize());
+//Make sure passport uses the configured session (express-session)
+app.use(passport.session());
+
+//Link passport to the user model
+const User = require('./models/user');
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 
 app.use('/', indexRouter);
 //app.use('/users', usersRouter);
