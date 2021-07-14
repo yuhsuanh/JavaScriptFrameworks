@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../partials/head.ejs') %>
+
+  <body>
+    <%- include('../partials/header.ejs') %>
+    
+    <div class="profile container">
+
+      <div class="card profile-left" style="width: 18rem;">
+        <img class="card-img-top" src='<%= member.img %>' alt="member image">
+        <div class="card-body">
+          <p class="card-text"><i class="fas fa-map-marker-alt text-dark"></i> <%= member.location %></p>
+          <p class="card-text"><i class="fas fa-user-tie text-dark"></i> <%= member.occupation %></p>
+        </div>
+      </div>
+
+      <div class="profile-right">
+        <h1><%= member.name %> <sup><%= member.title %></sup></h1>
+        <h5>Description</h5>
+        <p><%= member.description %></p>
+      </div>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+  </body>
+
+</html>

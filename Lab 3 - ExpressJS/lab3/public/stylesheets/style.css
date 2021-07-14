@@ -1,0 +1,61 @@
+/* fonts */
+@font-face {
+  font-family: "Audiowide";
+  src: url("/fonts/Audiowide-Regular.ttf");
+}
+@font-face {
+  font-family: "Rokkitt";
+  src: url("/fonts/Rokkitt-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Sacramento";
+  src: url("/fonts/Sacramento-Regular.ttf");
+}
+
+@font-face {
+  font-family: "PermanentMarker";
+  src: url("/fonts/PermanentMarker-Regular.ttf");
+}
+
+/* common */
+body {
+  font-family: "Audiowide", "Rokkitt", Monospace, Arial, Helvetica !important;
+}
+
+/* index page */
+.home {
+  display: flex !important;
+}
+.home > h1 {
+  position: absolute;
+  font-size: 9.4rem;
+  font-family: 'PermanentMarker' !important;
+}
+
+
+/* footer */
+.list-inline-item, i {
+  color: #6495ED;
+}
+
+
+/* member page */
+.profile {
+  margin-top: 50px;
+  background-color: lightgrey;
+  display: flex;
+}
+.profile-left {
+  flex: 2;
+  top: -30px;
+}
+.profile-right {
+  flex: 3;
+  padding: 50px;
+}
+.profile-right > h5 {
+  padding-top: 20px;
+}
+.profile-right > p {
+  text-indent: 50px;
+}

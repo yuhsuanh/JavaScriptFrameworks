@@ -1,0 +1,38 @@
+<!-- header -->
+<header>
+  <!-- navigation bar -->
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand h1" href="/">Huang Family</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- links -->
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+      <ul class="navbar-nav mr-auto">
+        <li class='nav-item <% if (title === "home") { %>active<% } %>'>
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class='nav-item <% if (title === "Shen") { %>active<% } %>'>
+          <a class='nav-link' href="/shen">Shen</a>
+        </li>
+        <li class='nav-item <% if (title === "Hsiang") { %>active<% } %>'>
+          <a class='nav-link' href="/hsiang">Hsiang</a>
+        </li>
+        <li class='nav-item <% if (title === "Ping") { %>active<% } %>'>
+          <a class='nav-link' href="/ping">Ping</a>
+        </li>
+        <li class='nav-item <% if (title === "YuRou") { %>active<% } %>'>
+          <a class='nav-link' href="/yurou">YuRou</a>
+        </li>
+        <li class='nav-item <% if (title === "YuHsuan") { %>active<% } %>'>
+          <a class='nav-link' href="/yuhsuan">YuHsuan</a>
+        </li>
+        <li class='nav-item <% if (title === "YuTzu") { %>active<% } %>'>
+          <a class='nav-link' href="/yutzu">YuTzu</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
