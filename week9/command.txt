@@ -1,0 +1,5 @@
+npm i passport-github2
+
+
+Github - Register a new OAuth application
+	https://github.com/settings/applications/new
