@@ -16,13 +16,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link {{#ifEquals path '/' }} active {{/ifEquals}}" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link {{#ifEquals path '/' }} active {{/ifEquals}}" href="/">Home</a>
             <a class="nav-item nav-link {{#ifEquals path '/projects' }} active {{/ifEquals}}" href="/projects">Projects</a>
             <a class="nav-item nav-link {{#ifEquals path '/courses' }} active {{/ifEquals}}" href="/courses">Courses</a>
           </div>
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link {{#ifEquals path '/login' }} active {{/ifEquals}}" href="/login">Login <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link {{#ifEquals path '/register' }} active {{/ifEquals}}" href="/register">Register <span class="sr-only">(current)</span></a>
+            {{#if user}}
+            <a class="nav-item nav-link {{#ifEquals path '/user' }} active {{/ifEquals}}" href="#">{{user.username}}</a>
+            <a class="nav-item nav-link {{#ifEquals path '/logout' }} active {{/ifEquals}}" href="/logout">Logout</a>
+            {{else}}
+            <a class="nav-item nav-link {{#ifEquals path '/login' }} active {{/ifEquals}}" href="/login">Login</a>
+            <a class="nav-item nav-link {{#ifEquals path '/register' }} active {{/ifEquals}}" href="/register">Register</a>
+            {{/if}}
           </div>
         </div>
       </nav>

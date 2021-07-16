@@ -27,11 +27,23 @@ router.get('/login', (req, res, next) => {
   res.render('login', {title: 'Login', messages: messages});
 });
 
-router.post('/login', passport.authenticate('local', {
-  successRedirect: '/projects',
-  failureRedirect: '/login',
-  failureMessage: 'Invalid Credentials'
-}));
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', 
+  {
+    successRedirect: '/projects',
+    failureRedirect: '/login',
+    failureMessage: 'Invalid Credentials'
+  }) (req, res, next);
+});
+
+
+//get handler for logout
+router.get('/logout', (req, res, next) => {
+  //log user out
+  req.logout();
+  //back to login page
+  res.redirect('/login');
+});
 
 
 
@@ -63,5 +75,23 @@ router.post('/register', (req, res, next) => {
 
   );
 });
+
+
+
+
+//GET handle for /github
+//User will be send to github.com
+router.get('/github', passport.authenticate('github', { scope: ['user.email'] }));
+
+//GET handle from github callback
+//User is coming back from github.com
+router.get('/github/callback', 
+  //handles github authentication token, send user to login of unsuccessful
+  passport.authenticate('github', { failureRedirect: '/login'}),
+  //if authentication token is valid, processing continues and user is sent to login
+  (req, res, next) => { res.redirect('/projects'); }
+);
+
+
 
 module.exports = router;
