@@ -1,0 +1,51 @@
+<h1 class="py-3">{{title}}</h1>
+
+{{!-- sign up form --}}
+<div class="login-form">
+    <form method="post">
+        <h2 class="text-center">Sign up</h2>
+        {{!-- username --}}
+        <div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span class="fa fa-user"></span>
+                    </span>
+                </div>
+                <input type="text" class="form-control" name="username" placeholder="Email" required>
+            </div>
+        </div>
+        {{!-- password --}}
+		<div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-lock"></i>
+                    </span>
+                </div>
+                <input type="password" class="form-control" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required >
+            </div>
+        </div>
+        {{!-- confirm password --}}
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-check-circle"></i>
+                    </span>
+                </div>
+                <input type="password" class="form-control" name="confirm" placeholder="Confirm password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+            </div>
+        </div>
+        {{!-- button --}}
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary login-btn btn-block">Sign up</button>
+        </div>
+        {{!-- sign up with other options --}}
+		<div class="or-seperator"><i>or</i></div>
+        <p class="text-center">Sign up with your social media account</p>
+        <div class="text-center social-btn">
+            <a href="/github" class="btn btn-secondary"><i class="fab fa-github"></i>&nbsp; GitHub</a>
+        </div>
+    </form>
+</div>

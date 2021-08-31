@@ -1,0 +1,91 @@
+<h1 class="py-3">{{title}}</h1>
+
+{{!-- Get chart data from router --}}
+<script>
+    var pieData = {{{ pieData }}};
+    var lineData = {{{ lineData }}};
+</script>
+
+<div class="container py-3">
+    <div class="row">
+        {{!-- hightlight area: top expense and month spending --}}
+        <div class="col-sm-12 col-md-6">
+            <h3 style="font-size: 25px; font-weight: bold; color:rgb(91,91,91);">Highlights</h3>
+            <a class="topSpendingAnchor" {{#if user}}href="/expense/edit/{{topSpendingData._id}}"{{/if}}>
+                <div id="topExpense" class=" rounded border my-4 py-3 text-center">
+                    <h4 class="py-2 highlight-subtitle">Top Spending</h4>
+                    <hr>
+                    <div class="row pt-2 highlight-content">
+                        <div class="col-6"><p>{{topSpendingData.storeName}}<sub>({{dateFormat topSpendingData.date "YYYY/MM/DD"}})</sub></p></div>
+                        <div class="col-6"><p>{{topSpendingData.total}}</p></div>
+                    </div>
+                </div>
+            </a>
+            <div id="monthExpense" class=" rounded border my-4 py-3 text-center">
+                <h4 class="py-2 highlight-subtitle">{{monthSpendingData.month}}</h4>
+                <hr>
+                <div class="row pt-2 highlight-content">
+                    <div class="col-6"><p>Spending:</p></div>
+                    <div class="col-6"><p>{{monthSpendingData.total}}</p></div>
+                </div>
+            </div>
+        </div>
+        {{!-- pie chart: spending of category --}}
+        <div class="col-sm-12 col-md-6">
+            <canvas id="categoryPieChart"></canvas>
+        </div>
+    </div>
+    {{!-- monthly spending in this year --}}
+    <div class="row">
+        <canvas id="monthlyLineChart"></canvas>
+    </div>
+</div>
+
+<script>
+    //on mouse over to top expense div area
+    var topExpense = document.querySelector("#topExpense");
+    topExpense.addEventListener("mouseover", mOver, false);
+    topExpense.addEventListener("mouseout", mOut, false);
+    function mOver() {
+        topExpense.classList.add("shadow-sm")
+    }
+    function mOut() {  
+        topExpense.classList.remove("shadow-sm")
+    }
+
+    //piechart 
+    var categoryPieChart = new Chart(document.getElementById('categoryPieChart'), {
+        type: 'doughnut',
+        data: pieData,
+            options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Spending for Each Category',
+                    font: {
+                        size: 25
+                    }
+                }
+            }
+        }
+    });
+    //linechart
+    var myChart = new Chart(
+        document.getElementById('monthlyLineChart'),
+        {
+            type: 'line',
+            data: lineData,
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Monthly Spending (This Year)',
+                        font: {
+                            size: 25
+                        }
+                    }
+                }
+            }
+        }
+    );
+</script>

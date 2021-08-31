@@ -1,0 +1,78 @@
+<h1 class="py-3">{{title}}</h1>
+
+{{!-- get categories from router --}}
+<script>
+    var categories = {{{ categories }}};
+</script>
+
+{{!-- edit form --}}
+<form method="POST" class="pt-3">
+    {{!-- Fields --}}
+    <fieldset>
+        <label for="store" class="col-2">Store:</label>
+        <input name="store" id="store" value="{{expense.storeName}}" required>
+    </fieldset>
+
+    <fieldset>
+        <label for="date" class="col-2">Date:</label>
+        <input name="date" id="date" type="date" value="{{dateFormat expense.date 'YYYY-MM-DD'}}" required>
+    </fieldset>
+
+    {{!-- item list --}}
+    <fieldset>
+        {{!-- add a new item to table--}}
+        <button class="btn btn-success my-2" type="button" onclick="addItemRow()">add a new item</button>
+        <table class="table table-hover table-light">
+            <thead >
+                <tr class="table-secondary">
+                    <th>Item</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <th>Total Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each dataset}}
+                    <tr>
+                        <td><input name='itemName' value="{{this.itemName}}"></td>
+                        <td>
+                            <select name='category'>
+                                {{!-- add options --}}
+                                <script>
+                                    categories.forEach(function(category) {
+                                        var selected = "";
+                                        if(category.name == '{{this.category}}')
+                                            selected = "selected";
+                                        document.writeln(`<option ${selected}>${category.name}</option>`);
+                                    });
+                                </script>
+                            </select>
+                        </td>
+                        <td><input class="dynamic" name="price" value="{{this.price}}" onchange="onInputChange(this)"></td>
+                        <td ><input class="dynamic" name='amount' value="{{this.amount}}" onchange="onInputChange(this)"></td>
+                        {{!-- calculate subtotal --}}
+                        <td>{{multiplyValues this.price this.amount}}</td>
+                        <td>
+                            {{!-- save temp data, delete button and recover button --}}
+                            <input name='_id' value='{{this._id}}' style="display: none;">
+                            <input name='isDelete' class="isDelete" value='false' style="display: none;">
+                            <button type="button" class="btn btn-danger delete-btn" onclick="deleteExistRow(this)">Delete</button>
+                            <button type="button" class="btn btn-success recover-btn" onclick="recoverExistRow(this)" style="display: none;">Recover</button>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </fieldset>
+
+    {{!-- total of the expense --}}
+    <fieldset>
+        <label for="total" class="col-2">Total:</label>
+        <input name="total" id="total" value="{{expense.total}}" readonly>
+    </fieldset>
+
+    {{!-- Button --}}
+    <button class="offset-11 btn btn-primary" type="submit">Save</button>
+</form>

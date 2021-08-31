@@ -1,0 +1,13 @@
+
+Track your spending Application
+
+
+The Dashboard can display diagrams include "Most Expensive Expense", "Pie Diagram", "Line Chart".
+You can add your own categories.
+You can add, update, delete expenses which include items.
+
+
+//next dashboard
+//next navbar
+//next authentication
+//next design
